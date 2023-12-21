@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content-container {
+  display: flex;
+  flex-grow: 1; /* Fill the remaining space */
+}
+
+.Filter {
+  width: 30%; /* Width for the filter column */
+  height: 100%; /* Full height of the container */
+}
+
+.SearchResults {
+  width: 70%; /* Width for the search results area */
+  height: 100%; /* Full height of the container */
+}
