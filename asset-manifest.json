@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Algolia-Assignment-Restaurants/static/css/main.3d3df462.css",
+    "main.css": "/Algolia-Assignment-Restaurants/static/css/main.714f906a.css",
     "main.js": "/Algolia-Assignment-Restaurants/static/js/main.ed2e3cf3.js",
     "static/js/787.d4aba7ab.chunk.js": "/Algolia-Assignment-Restaurants/static/js/787.d4aba7ab.chunk.js",
     "index.html": "/Algolia-Assignment-Restaurants/index.html",
-    "main.3d3df462.css.map": "/Algolia-Assignment-Restaurants/static/css/main.3d3df462.css.map",
+    "main.714f906a.css.map": "/Algolia-Assignment-Restaurants/static/css/main.714f906a.css.map",
     "main.ed2e3cf3.js.map": "/Algolia-Assignment-Restaurants/static/js/main.ed2e3cf3.js.map",
     "787.d4aba7ab.chunk.js.map": "/Algolia-Assignment-Restaurants/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d3df462.css",
+    "static/css/main.714f906a.css",
     "static/js/main.ed2e3cf3.js"
   ]
 }
