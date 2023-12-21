@@ -14,6 +14,8 @@ const App = () => {
   }, [handleSearch]);
 
   return (
+    <div class="page">
+    <div class="page__container">
     <div className="main-container">
       <SearchBar onSearch={onSearch} />
       <div className="content-container">
@@ -21,6 +23,8 @@ const App = () => {
         <SearchResults results={results} />
       </div>
     </div>
+    </div>
+  </div>
   );
 };
 
