@@ -5,7 +5,7 @@
 Find the app here:
 https://oscell.github.io/Algolia-Assignment-Restaurants
 
-## Question answers
+## Question Answers
 
 ### Question 1: Define Records, Indexing and Custom Ranking
 
@@ -14,13 +14,13 @@ Hello George,
 Great to see you're interested in understanding the fundamentals.
 
 **Records:**  
-In the context of a search engine, records are individual units of searchable data. They also have attributes that describe the record in some way. For example, in a product search engine, each product is a record. They might have attributes such as name, price, rating, number of reviews, etc.
+In the context of a search engine, records are individual units of data. They have attributes that describe the record in some way. For example, in a product search engine, each product is a record. They might have attributes such as name, price, rating, number of reviews, etc.
 
 **Indexing:**  
 An index is where a search engine stores its data. This is like having a table for a database, except an index is optimized for search operations. Indexing is when a search engine creates the index, organizing the information.
 
 **Custom Ranking Metrics:**  
-The primary objective of search is to assist users in finding what they're seeking. To do this, you can rank items in ways that are useful to your users. Common custom ranking attributes include the number of sales, ratings, release date, etc.
+The primary objective of the search is to assist users in finding what they're seeking. To do this, you can rank items in ways that are useful to your users. Common custom ranking attributes include the number of sales, ratings, release date, etc.
 
 Here are some example use cases:
 
@@ -42,7 +42,7 @@ Regards,
 
 Oscar
 
-### Question 2: Dashboard design
+### Question 2: Dashboard design feedback
 
 Hello Matt,
 
@@ -57,7 +57,7 @@ I hope you find this information helpful. Please don't hesitate to reach out if 
 Best regards,
 Oscar
 
-### Question 3
+### Question 3: High-Level Overview
 
 Hello Leo,
 
@@ -68,7 +68,7 @@ Integrating Algolia into your website involves several key steps. The complexity
 1. Setting up an Algolia account.
 2. Indexing your data: Import your website's data into an Algolia index.
 3. Configuring search parameters: Decide which features are important for your search.
-4. Integrating search into your website: This involves using the Algolia search API. You can use pre-built widgets or your own code.
+4. Integrating search into your website: This involves using the Algolia search API. You can use pre-built widgets or your code. [Algolia has many different integrations](https://www.algolia.com/developers/).
 5. Testing: Test the search functionality to ensure it's working correctly.
 6. Optimization: Once integrated, you should optimize the experience based on user feedback and analytics by using Algolia's features.
 
