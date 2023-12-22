@@ -3,7 +3,7 @@ import './Filter.css'; // Assuming you will create a CSS file for styling
 import StarRating from '../StarRating/StarRating'; // Adjust the import path as needed
 import jsonData from '../../data/combined_data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight,faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 function getCuisineTypes({ results }) {
 
@@ -98,7 +98,7 @@ const Filter = ({ results, onFilterChange }) => {
 
 
 
-<div className={`filter__container ${isFilterVisible ? 'filter__container--open' : ''}`}>
+          <div className={`filter__container ${isFilterVisible ? 'filter__container--open' : ''}`}>
 
             <div className="filter__section">
               <div className="filter__title">Cuisine/Food Type</div>
@@ -144,12 +144,12 @@ const Filter = ({ results, onFilterChange }) => {
           </div>
         </div>)}
 
-        <button className="button__view-filter" onClick={handleFilterVisibility}>
-   {isFilterVisible ? 
-     (<FontAwesomeIcon icon={faChevronLeft} />) : 
-     (<FontAwesomeIcon icon={faChevronRight} />)
-   }
-</button>
+      <button className="button__view-filter" onClick={handleFilterVisibility}>
+        {isFilterVisible ?
+          (<FontAwesomeIcon icon={faChevronLeft} />) :
+          (<FontAwesomeIcon icon={faChevronRight} />)
+        }
+      </button>
 
     </div>
 
