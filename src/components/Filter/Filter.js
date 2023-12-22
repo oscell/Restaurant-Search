@@ -26,8 +26,8 @@ function getCuisineTypes({ results }) {
 
     }
   }
-  
-  
+
+
   cuisine_types = Object.entries(cuisine_types);
 
   cuisine_types.sort((a, b) => b[1] - a[1]);
@@ -41,7 +41,7 @@ const Filter = ({ results, onFilterChange }) => {
   const [displayCount, setDisplayCount] = useState(5);
   const [activeFilters, setActiveFilters] = useState({});
 
-  
+
   useEffect(() => {
     onFilterChange(activeFilters);
   }, [activeFilters, onFilterChange]);
@@ -66,7 +66,7 @@ const Filter = ({ results, onFilterChange }) => {
           [filterType]: { [filterValue]: !prev[filterType]?.[filterValue] }
         };
       }
-  
+
       // For other filter types, keep the original behavior
       return {
         ...prev,
@@ -77,7 +77,7 @@ const Filter = ({ results, onFilterChange }) => {
       };
     });
   };
-  
+
 
 
   let cuisine_types = getCuisineTypes({ results });
@@ -86,57 +86,55 @@ const Filter = ({ results, onFilterChange }) => {
 
 
   return (
-<div className="filter">
-  <div className="filter__container">
-    {/* existing sections... */}
+    <div className="filter">
+<div className={`filter__container`}>
 
-    {/* Cuisine/Food Type Section */}
-    <div className="filter__section">
-      <div className="filter__title">Cuisine/Food Type</div>
-      {cuisineEntries.slice(0, displayCount).map(([cuisine, number]) => (
-        <div
-          className={`filter__label ${activeFilters['food_type']?.[cuisine] ? 'filter__label--active' : ''}`}
-          key={cuisine}
-          onClick={() => toggleFilter('food_type', cuisine)}
-        >
-          <div className="filter__label-text">{cuisine}</div>
-          <div className="filter__label-number">{number}</div>
+        <div className="filter__section">
+          <div className="filter__title">Cuisine/Food Type</div>
+          {cuisineEntries.slice(0, displayCount).map(([cuisine, number]) => (
+            <div
+              className={`filter__label ${activeFilters['food_type']?.[cuisine] ? 'filter__label--active' : ''}`}
+              key={cuisine}
+              onClick={() => toggleFilter('food_type', cuisine)}
+            >
+              <div className="filter__label-text">{cuisine}</div>
+              <div className="filter__label-number">{number}</div>
+            </div>
+          ))}
+          <button onClick={toggleDisplayCount}>
+            {displayCount === 5 ? 'More Options' : displayCount === 10 && cuisineEntries.length > 10 ? 'Show All' : 'Show Less'}
+          </button>
         </div>
-      ))}
-      <button onClick={toggleDisplayCount}>
-        {displayCount === 5 ? 'More Options' : displayCount === 10 && cuisineEntries.length > 10 ? 'Show All' : 'Show Less'}
-      </button>
-    </div>
 
-    {/* Rating Section */}
-    <div className="filter__section">
-      <div className="filter__title">Rating</div>
-      {[0, 1, 2, 3, 4, 5].map(rating => (
-        <div
-          className={`filter__label ${activeFilters['stars_count']?.[rating] ? 'filter__label--active' : ''}`}
-          key={rating}
-          onClick={() => toggleFilter('stars_count', rating)}
-        >
-          <div className="filter__label-text"><StarRating rating={rating} /></div>
+        {/* Rating Section */}
+        <div className="filter__section">
+          <div className="filter__title">Rating</div>
+          {[0, 1, 2, 3, 4, 5].map(rating => (
+            <div
+              className={`filter__label ${activeFilters['stars_count']?.[rating] ? 'filter__label--active' : ''}`}
+              key={rating}
+              onClick={() => toggleFilter('stars_count', rating)}
+            >
+              <div className="filter__label-text"><StarRating rating={rating} /></div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
 
-    {/* Payment Options Section */}
-    <div className="filter__section">
-      <div className="filter__title">Payment Options</div>
-      {['AMEX/American Express', 'Visa', 'Discover', 'MasterCard'].map(paymentOption => (
-        <div
-          className={`filter__label ${activeFilters['payment_options']?.[paymentOption] ? 'filter__label--active' : ''}`}
-          key={paymentOption}
-          onClick={() => toggleFilter('payment_options', paymentOption)}
-        >
-          <div className="filter__label-text">{paymentOption}</div>
+        {/* Payment Options Section */}
+        <div className="filter__section">
+          <div className="filter__title">Payment Options</div>
+          {['AMEX/American Express', 'Visa', 'Discover', 'MasterCard'].map(paymentOption => (
+            <div
+              className={`filter__label ${activeFilters['payment_options']?.[paymentOption] ? 'filter__label--active' : ''}`}
+              key={paymentOption}
+              onClick={() => toggleFilter('payment_options', paymentOption)}
+            >
+              <div className="filter__label-text">{paymentOption}</div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
-  </div>
-</div>
 
 
   );

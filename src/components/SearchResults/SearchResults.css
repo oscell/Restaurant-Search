@@ -126,9 +126,13 @@
     float: left;
     width: 90%;
     margin-top: 18px;
-    padding: 5px;
+    margin-bottom: -10px;
     border: 1px solid #ffab6600;
   }
+
+  .result__text-container {
+    margin-top: -10px; /* Adjusts the element 2 pixels higher */
+}
 
   .results__item:hover {
     border: 1px solid #ffab66;
