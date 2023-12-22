@@ -1,44 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import './Filter.css'; // Assuming you will create a CSS file for styling
-import StarRating from '../StarRating/StarRating'; // Adjust the import path as needed
-import jsonData from '../../data/combined_data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import './Filter.css';
+import StarRating from '../StarRating/StarRating';
+import jsonData from '../../data/combined_data.json';
 
-
-// Function to get the number cuisine types from the data sorted by most comon to least common
+// Helper function to get cuisine types from the data, sorted by most common to least common
 function getCuisineTypes({ results }) {
-
-
   if (results.hits) {
-    results = results.hits
+    results = results.hits;
   }
-
 
   let cuisine_types = {};
+  jsonData.forEach(item => {
+    cuisine_types[item.food_type] = (cuisine_types[item.food_type] || 0) + 1;
+  });
 
-  for (let i = 0; i < jsonData.length; i++) {
-
-    if (jsonData[i].food_type in cuisine_types) {
-
-      cuisine_types[jsonData[i].food_type] += 1;
-
-    } else {
-
-      cuisine_types[jsonData[i].food_type] = 1;
-
-    }
-  }
-
-
-  cuisine_types = Object.entries(cuisine_types);
-
-  cuisine_types.sort((a, b) => b[1] - a[1]);
-
-  return cuisine_types;
+  return Object.entries(cuisine_types).sort((a, b) => b[1] - a[1]);
 }
-
-
 
 const Filter = ({ results, onFilterChange }) => {
   const [displayCount, setDisplayCount] = useState(5);
@@ -49,47 +28,26 @@ const Filter = ({ results, onFilterChange }) => {
     onFilterChange(activeFilters);
   }, [activeFilters, onFilterChange]);
 
-  // Function to toggle the visibility of the filter
   const handleFilterVisibility = () => {
     setIsFilterVisible(prevState => !prevState);
   };
 
-  // Function to toggle how amy cusine types are displayed
   const toggleDisplayCount = () => {
-    if (displayCount === 5) {
-      setDisplayCount(10); // Show up to 10 options
-    } else if (displayCount === 10 && cuisineEntries.length > 10) {
-      setDisplayCount(Number.MAX_SAFE_INTEGER); // Show all options
-    } else {
-      setDisplayCount(5); // Revert back to showing 5 options
-    }
+    const newDisplayCount = displayCount === 5 ? 10 : displayCount === 10 && cuisineEntries.length > 10 ? Number.MAX_SAFE_INTEGER : 5;
+    setDisplayCount(newDisplayCount);
   };
 
   const toggleFilter = (filterType, filterValue) => {
-    setActiveFilters(prev => {
-      if (filterType === 'stars_count') {
-        return {
-          ...prev,
-          [filterType]: { [filterValue]: !prev[filterType]?.[filterValue] }
-        };
+    setActiveFilters(prev => ({
+      ...prev,
+      [filterType]: {
+        ...prev[filterType],
+        [filterValue]: !prev[filterType]?.[filterValue]
       }
-
-      return {
-        ...prev,
-        [filterType]: {
-          ...prev[filterType],
-          [filterValue]: !prev[filterType]?.[filterValue]
-        }
-      };
-    });
+    }));
   };
 
-
-
-  let cuisine_types = getCuisineTypes({ results });
-
-  const cuisineEntries = cuisine_types;
-
+  const cuisineEntries = getCuisineTypes({ results });
 
   return (
     <div className="filter-container">

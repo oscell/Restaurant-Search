@@ -61,8 +61,8 @@
 
   .result-item__rating {
     display: flex;
-    align-items: center; /* Aligns items vertically in the center */
-    gap: 8px; /* Optional: adds some space between the items */
+    align-items: center; 
+    gap: 8px; 
 }
 
   .results::-webkit-scrollbar {
@@ -89,9 +89,9 @@
 
   .results__stats-container {
     display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: flex-start; /* Align items to the start of the container */
-    gap: 3px; /* Space between child elements */
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 3px; 
 }
 
 .results__stats-bar {
@@ -143,12 +143,12 @@
   }
 
   .results__item-link {
-    text-decoration: none; /* Removes underline from links */
-    color: inherit; /* Keeps the original text color */
+    text-decoration: none; 
+    color: inherit;
   }
   
   .results__item-link:hover {
-    text-decoration: none; /* Optional: Removes underline on hover */
+    text-decoration: none; 
   }
   
   .results__item--first {

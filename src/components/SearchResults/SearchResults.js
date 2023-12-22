@@ -26,11 +26,11 @@ const SearchResults = ({ results }) => {
   if (hits.length === 0) {
     return (
       <div className='results'>
-      <div id="no-results-message">
-        <p>We didn't find any results for the search.</p>
-        <p>Please try again.</p>
-        <img src="https://static.thenounproject.com/png/4974710-200.png" alt="No results found" />
-      </div>
+        <div id="no-results-message">
+          <p>We didn't find any results for the search.</p>
+          <p>Please try again.</p>
+          <img src="https://static.thenounproject.com/png/4974710-200.png" alt="No results found" />
+        </div>
       </div>
     );
   }
