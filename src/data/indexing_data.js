@@ -2,8 +2,8 @@ const algoliasearch = require('algoliasearch');
 const fs = require('fs');
 
 // Initialize Algolia client
-const client = algoliasearch('PZZB1KPYSS', '478a905c8af7c34bd97f025c3650270d');
-const index = client.initIndex('Restaurants');
+const client = algoliasearch(process.env.REACT_APP_ALGOLIA_APP_ID, process.env.REACT_APP_ALGOLIA_API_KEY);
+const index = client.initIndex(process.env.REACT_APP_ALGOLIA_INDEX_NAME);
 
 const jsonFilePath = 'C:/Users/OEM/Desktop/Algolia Assignment/Reactapp_plusFiles/my-app/src/data/combined_data.json';
 const restaurants_list = JSON.parse(fs.readFileSync(jsonFilePath, 'utf8'));

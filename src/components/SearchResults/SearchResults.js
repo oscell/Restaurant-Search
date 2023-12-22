@@ -8,7 +8,7 @@ const SearchResults = ({ results }) => {
   let hits = [];
 
   if (results.hits) {
-    // Check if geoDistance exists and sort hits by geoDistance if it does
+    // Check if geoDistance exists and sort hits by geoDistance if it does otherwis sorth by rating
     if (results.hits.some(hit => hit._rankingInfo && hit._rankingInfo.geoDistance)) {
       hits = [...results.hits].sort((a, b) => a._rankingInfo.geoDistance - b._rankingInfo.geoDistance);
     } else {

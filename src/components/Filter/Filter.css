@@ -9,13 +9,10 @@
   margin-left: 12px;
   box-sizing: border-box;
   border-right: 1px solid #e6e6e6;
-  /* max-width: 182px;  */
 }
 
 @media (min-width: 768px) {
   .filter {
-
-    /* width: 182px; */
     max-height: 430px;
     margin-bottom: 0;
   }

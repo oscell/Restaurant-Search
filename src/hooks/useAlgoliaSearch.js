@@ -31,14 +31,11 @@ const useAlgoliaSearch = () => {
   
         
         if (isActive) {
-          // Check if filterValue is a number
           const isNumber = !isNaN(parseFloat(filterValue)) && isFinite(filterValue);
     
           if (isNumber) {
-            // Assuming the operator and value you want to use are fixed ('>=', 4)
             helper.addNumericRefinement(filterType, '>=', filterValue);
           } else {
-            // Original logic for non-numeric filters
             if (helper.state.disjunctiveFacets.includes(filterType)) {
               helper.addDisjunctiveFacetRefinement(filterType, filterValue);
             } else {
@@ -61,7 +58,6 @@ const useAlgoliaSearch = () => {
   }, [helper, activeFilters,location]);
 
   useEffect(() => {
-    // console.log("Active Filters Updated:", activeFilters);
   }, [activeFilters]);
 
   useEffect(() => {
@@ -103,8 +99,6 @@ const useAlgoliaSearch = () => {
 
   const handleFilterChange = useCallback((filters) => {
     setActiveFilters(filters);
-    // console.log("handleFilterChange called with filters:", filters); // Debug: Log when handleFilterChange is called
-
     handleSearch(currentSearchTerm);
   }, [currentSearchTerm, handleSearch]);
 

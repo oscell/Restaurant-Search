@@ -8,7 +8,6 @@ import SearchResults from './components/SearchResults/SearchResults';
 const App = () => {
   const { results, handleSearch, handleFilterChange } = useAlgoliaSearch();
 
-  // Use useCallback to memoize the function to avoid unnecessary re-renders
   const onSearch = useCallback((term) => {
     handleSearch(term);
   }, [handleSearch]);

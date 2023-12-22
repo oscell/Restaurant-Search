@@ -5,9 +5,10 @@ import jsonData from '../../data/combined_data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
+
+// Function to get the number cuisine types from the data sorted by most comon to least common
 function getCuisineTypes({ results }) {
 
-  // console.log(results._rawResults);
 
   if (results.hits) {
     results = results.hits
@@ -48,11 +49,12 @@ const Filter = ({ results, onFilterChange }) => {
     onFilterChange(activeFilters);
   }, [activeFilters, onFilterChange]);
 
+  // Function to toggle the visibility of the filter
   const handleFilterVisibility = () => {
     setIsFilterVisible(prevState => !prevState);
   };
 
-  // Function to toggle the state
+  // Function to toggle how amy cusine types are displayed
   const toggleDisplayCount = () => {
     if (displayCount === 5) {
       setDisplayCount(10); // Show up to 10 options
@@ -65,7 +67,6 @@ const Filter = ({ results, onFilterChange }) => {
 
   const toggleFilter = (filterType, filterValue) => {
     setActiveFilters(prev => {
-      // If the filter type is 'stars_count', reset other stars_count filters
       if (filterType === 'stars_count') {
         return {
           ...prev,
@@ -73,7 +74,6 @@ const Filter = ({ results, onFilterChange }) => {
         };
       }
 
-      // For other filter types, keep the original behavior
       return {
         ...prev,
         [filterType]: {
