@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Algolia-Assignment-Restaurants/static/css/main.40b89899.css",
-    "main.js": "/Algolia-Assignment-Restaurants/static/js/main.e1043a89.js",
+    "main.css": "/Algolia-Assignment-Restaurants/static/css/main.6913c351.css",
+    "main.js": "/Algolia-Assignment-Restaurants/static/js/main.ed2e3cf3.js",
     "static/js/787.d4aba7ab.chunk.js": "/Algolia-Assignment-Restaurants/static/js/787.d4aba7ab.chunk.js",
     "index.html": "/Algolia-Assignment-Restaurants/index.html",
-    "main.40b89899.css.map": "/Algolia-Assignment-Restaurants/static/css/main.40b89899.css.map",
-    "main.e1043a89.js.map": "/Algolia-Assignment-Restaurants/static/js/main.e1043a89.js.map",
+    "main.6913c351.css.map": "/Algolia-Assignment-Restaurants/static/css/main.6913c351.css.map",
+    "main.ed2e3cf3.js.map": "/Algolia-Assignment-Restaurants/static/js/main.ed2e3cf3.js.map",
     "787.d4aba7ab.chunk.js.map": "/Algolia-Assignment-Restaurants/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.40b89899.css",
-    "static/js/main.e1043a89.js"
+    "static/css/main.6913c351.css",
+    "static/js/main.ed2e3cf3.js"
   ]
 }
