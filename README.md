@@ -24,15 +24,20 @@ Custom Ranking  metrics:
 The primary objective of search is to assist users in finding what they're seeking. To do this you can rank item sin ways which are useful to your users. Common custom ranking attributes include: Number of sales, ratings  release date etc.
 
 Here are some examples of how you could use this:
+
 1. **Travel Booking Site**: If users search for "hotels in Paris", the custom ranking displays the hotels with the best user ratings and reviews at the top.
+
 2. **Recipe App**: When users search for "vegetarian recipes", the app shows the most liked vegetarian recipes first.
 3. **Job Portal**: If a user types in “software engineer jobs”, the custom ranking presents the listings with the most recent postings at the top.
 
-I'll be happy to answer more of your questions or if you want o read a but more about it visit: https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data/in-depth/what-is-in-a-record/
+ If you want to read up a bit more you can see the following resouces:
 
-https://support.algolia.com/hc/en-us/articles/4406981910289-What-is-an-index-
+- [What is a record](https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data/in-depth/what-is-in-a-record/)
+- [What is an Index](https://support.algolia.com/hc/en-us/articles/4406981910289-What-is-an-index-)
+- [Custom Ranking](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking/)
 
-https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking/
+
+I'll be happy to answer more of your questions.
 
 Regards,
 
