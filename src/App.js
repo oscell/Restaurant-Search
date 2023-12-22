@@ -14,8 +14,8 @@ const App = () => {
   }, [handleSearch]);
 
   return (
-    <div class="page">
-    <div class="page__container">
+    <div className="page">
+    <div className="page__container">
     <div className="main-container">
       <SearchBar onSearch={onSearch} />
       <div className="content-container">

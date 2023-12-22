@@ -54,5 +54,5 @@ combined_data = combineData();
 
 console.log(combined_data);
 
-// index.saveObjects(combined_data)
+index.saveObjects(combined_data)
 

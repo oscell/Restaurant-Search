@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SearchResults.css';
-import StarRating from '../StarRating';
+import StarRating from '../StarRating/StarRating';
 
 const SearchResults = ({ results }) => {
   const [displayCount, setDisplayCount] = useState(3);
@@ -12,14 +12,14 @@ const SearchResults = ({ results }) => {
     if (results.hits.some(hit => hit._rankingInfo && hit._rankingInfo.geoDistance)) {
       hits = [...results.hits].sort((a, b) => a._rankingInfo.geoDistance - b._rankingInfo.geoDistance);
     } else {
-      hits = results.hits
+      hits = [...results.hits].sort((a, b) => b.stars_count - a.stars_count);
     }
   }
 
 
   const ShowMore = () => {
     console.log(displayCount);
-    setDisplayCount(displayCount + 5);
+    setDisplayCount(displayCount + 10);
   }
 
 
@@ -42,7 +42,7 @@ const SearchResults = ({ results }) => {
         <div className="results__time-text">in 0.00{results.processingTimeMS} seconds</div>
         <div className="results__stats-bar"></div>
       </div>
-      <div >
+      <div className='all_results' >
         {hits.slice(0, displayCount).map((hit, index) => (
           <div className="result" key={index}>
             <a href={hit.reserve_url} target="_blank" rel="noopener noreferrer" className="results__item-link">
@@ -65,6 +65,7 @@ const SearchResults = ({ results }) => {
           </div>
 
         ))}
+
       </div>
       <div className='results_button'>
         <button onClick={ShowMore} type="button" className="centered_button">Show More</button>

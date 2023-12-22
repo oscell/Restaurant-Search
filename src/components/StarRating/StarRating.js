@@ -17,12 +17,7 @@ const StarRating = ({ rating, totalStars = 5 }) => {
         {i === Math.floor(rating) && rating % 1 >= 0.5 && (
           <FontAwesomeIcon 
             icon={fasFaStarHalf} 
-            style={{ 
-              color: "#ffac64", 
-              position: 'absolute',
-              left: 0,
-              top: 0,
-            }} 
+            style={{ color: "#ffac64", position: 'absolute', transform: 'translate(-100%,20%)'}} 
           />
         )}
       </div>

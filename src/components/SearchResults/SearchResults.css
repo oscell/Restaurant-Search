@@ -49,6 +49,7 @@
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: -10px;
   }
   
   .results {
@@ -102,6 +103,10 @@
     border-bottom: 1px solid #e6e6e6;
 }
 
+.result__text-container {
+    transform: translate(0, -10%);
+}
+
 .results__count-text {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -127,12 +132,10 @@
     width: 90%;
     margin-top: 18px;
     margin-bottom: -10px;
+    padding: 5px 5px 5px 5px;
     border: 1px solid #ffab6600;
+    
   }
-
-  .result__text-container {
-    margin-top: -10px; /* Adjusts the element 2 pixels higher */
-}
 
   .results__item:hover {
     border: 1px solid #ffab66;
@@ -155,9 +158,10 @@
     display: flex;
     justify-content: center; 
     width: 100%;
-    margin-top: 20px;
 }
+
 .centered_button {
+  margin-top: 20px;
     padding: 10px 20px; 
     font-size: 16px;  
     cursor: pointer;

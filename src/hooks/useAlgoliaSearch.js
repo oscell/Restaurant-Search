@@ -9,9 +9,11 @@ const useAlgoliaSearch = () => {
   const [currentSearchTerm, setCurrentSearchTerm] = useState('');
   const [location, setLocation] = useState(null);
 
-  const client = useMemo(() => algoliasearch('5FK3NUTMU0', 'a12f15e1ed6506bcb370ed25b0c26c77'), []);
-  const helper = useMemo(() => algoliasearchHelper(client, 'Restaurants', {
-    hitsPerPage: 10,
+  const client = useMemo(() => algoliasearch(process.env.REACT_APP_ALGOLIA_APP_ID,process.env.REACT_APP_ALGOLIA_API_KEY    ), []);
+
+  
+  const helper = useMemo(() => algoliasearchHelper(client,process.env.REACT_APP_ALGOLIA_INDEX_NAME    , {
+    hitsPerPage: 1000,
     disjunctiveFacets: ['food_type', 'stars_count', 'payment_options'],
     getRankingInfo: true
   }), [client]);
@@ -23,6 +25,11 @@ const useAlgoliaSearch = () => {
 
     Object.entries(activeFilters).forEach(([filterType, filters]) => {
       Object.entries(filters).forEach(([filterValue, isActive]) => {
+        if (filterType === 'payment_options') {
+
+        } else{
+  
+        
         if (isActive) {
           // Check if filterValue is a number
           const isNumber = !isNaN(parseFloat(filterValue)) && isFinite(filterValue);
@@ -39,7 +46,8 @@ const useAlgoliaSearch = () => {
             }
           }
         }
-      });
+      }
+    });
     });
     
     
