@@ -3,7 +3,7 @@
 ## App
 
 Find the app here:
-https://oscell.github.io/Algolia-Assignment-Restaurants
+https://oscell.github.io/Restaurant-Search
 
 ## Question Answers
 
